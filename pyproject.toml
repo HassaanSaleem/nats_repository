@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nats_repository"
+version = "0.1.0"
+description = "High-level NATS JetStream publish/consume wrappers with retry logic, dead-letter handling, and concurrent message processing."
+readme = "README.md"
+license = "MIT"
+authors = [{name = "Syed Hassaan Saleem", email = "saleemhassaan94@gmail.com"}]
+requires-python = ">=3.11"
+keywords = ["nats", "jetstream", "messaging", "pubsub"]
+dependencies = [
+    "nats-py>=2.9",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+]
+
+[project.urls]
+Homepage = "https://github.com/HassaanSaleem/nats_repository"
+
+[tool.setuptools.packages.find]
+include = ["nats_repository*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"

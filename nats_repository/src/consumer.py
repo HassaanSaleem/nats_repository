@@ -88,7 +88,6 @@ class Consumer(Process):
         self._msg_retention = msg_retention
         self._msg_max_count = int(msg_max_count)
         self._msg_max_size = int(msg_max_size * 1024 * 1024 * 1024)
-        self._semaphore = asyncio.Semaphore(self._concurrency)
         self._message_queue = asyncio.Queue(maxsize=self.max_queue_size)
         self._max_retries = max_retries
         self._backoff_intervals = backoff_intervals or []

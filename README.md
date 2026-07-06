@@ -17,7 +17,7 @@ A Python library for implementing robust message publishing and consuming using 
 
 ### Prerequisites
 
-- Python 3.8 or higher
+- Python 3.11 or higher
 - NATS server with JetStream enabled
 
 ### Install from source
@@ -42,8 +42,8 @@ pip install .
 ```python
 import asyncio
 import json
-from nats_repository.src.connection_parameters import ConnectionParameters
-from nats_repository.src.publisher import AsyncIOPublisher
+from nats_repository import ConnectionParameters
+from nats_repository import AsyncIOPublisher
 
 async def main():
     # Configure connection
@@ -83,8 +83,8 @@ if __name__ == '__main__':
 ```python
 import asyncio
 import json
-from nats_repository.src.connection_parameters import ConnectionParameters
-from nats_repository.src.consumer import Consumer
+from nats_repository import ConnectionParameters
+from nats_repository import Consumer
 
 async def process_message(event, subject, retries):
     """Custom message processing function"""
